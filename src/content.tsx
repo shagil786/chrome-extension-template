@@ -1,7 +1,10 @@
 import cssText from "data-text:~style.css"
 import type { PlasmoCSConfig } from "plasmo"
+import { Fragment, useEffect, useRef, useState } from "react"
 
-import { CountButton } from "~features/count-button"
+import AIIcon from "~features/aiIcon"
+
+import Modal from "./popup"
 
 export const config: PlasmoCSConfig = {
   matches: ["https://*.linkedin.com/*"]
@@ -14,10 +17,21 @@ export const getStyle = () => {
 }
 
 const PlasmoOverlay = () => {
+  const [showModal, setShowModal] = useState(false)
+
   return (
-    <div className="z-50 flex fixed top-32 right-8">
-      <CountButton />
-    </div>
+    <Fragment>
+      <div className="App">
+        <AIIcon
+          onClick={() =>
+            setTimeout(() => {
+              setShowModal(true)
+            }, 200)
+          }
+        />
+      </div>
+      <Modal isVisible={showModal} onClose={() => setShowModal(false)} />
+    </Fragment>
   )
 }
 
