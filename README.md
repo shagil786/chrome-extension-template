@@ -38,4 +38,6 @@ This should create a production bundle for your extension, ready to be zipped an
 
 https://github.com/shagil786/chrome-extension-template/assets/109960926/df02271a-74b0-4eb7-86ec-533ee22302ea
 
+## Also don't forget to add the .env file in the root and give API_KEY='<YOUR_GEMINI_API_KEY>'
+
 
